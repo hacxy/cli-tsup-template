@@ -2,7 +2,7 @@
 
 这是一个 Nodejs CLI 应用程序开发模板, 它使用了 typescript 作为开发语言, tsup 作为构建工具
 
-English | 简体中文
+[English](https://github.com/hacxy/cli-tsup-template?tab=readme-ov-file#cli-tsup-template) | 简体中文
 
 ## 先决条件
 

@@ -2,7 +2,7 @@
 
 This is a Nodejs CLI application development template that uses TypeScript as the development language and tsup as the build tool.
 
-English | 简体中文
+English | [简体中文](https://github.com/hacxy/cli-tsup-template/blob/main/README_zh.md)
 
 ## Prerequisites
 
