@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import chalk from 'chalk';
-
+import prompts from 'prompts';
 let name = '';
 
 process.argv.find((arg, index, args) => {
@@ -9,5 +9,18 @@ process.argv.find((arg, index, args) => {
   }
 });
 
-const message = chalk.green(`🥳 Hello ${name}! Welcome to use the CLI Tsup App template.`);
-console.log(message);
+const bootstrap = async () => {
+  await prompts({
+    type: name ? null : 'text',
+    name: 'name',
+    message: 'Your name: ',
+    onState(stage) {
+      name = stage.value;
+    }
+  });
+
+  const message = chalk.green(`🥳 Hello ${name}! Welcome to use the CLI Tsup Template.`);
+  console.log(message);
+};
+
+bootstrap();
