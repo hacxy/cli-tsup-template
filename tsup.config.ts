@@ -6,7 +6,8 @@ export default defineConfig({
   target: 'node18',
   platform: 'node',
   bundle: true,
-  clean: true
+  clean: true,
+  minify: true
   // dts: true,
   // watch: true,
   // treeshake: true,

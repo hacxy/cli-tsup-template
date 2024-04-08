@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 import chalk from 'chalk';
 import prompts from 'prompts';
-let name = '';
+import ora from 'ora';
 
+let name = '';
 process.argv.find((arg, index, args) => {
-  if (arg === '--name') {
-    name = args[index + 1];
-  }
+  if (arg === '--name') name = args[index + 1];
 });
 
 const bootstrap = async () => {
@@ -19,8 +18,11 @@ const bootstrap = async () => {
     }
   });
 
-  const message = chalk.green(`🥳 Hello ${name}! Welcome to use the CLI Tsup Template.`);
-  console.log(message);
+  const spinner = ora('Loading ...').start();
+
+  setTimeout(() => {
+    spinner.succeed(chalk.green(`🥳 Hello ${name}! Welcome to use the CLI Tsup Template.`));
+  }, 1000);
 };
 
 bootstrap();
