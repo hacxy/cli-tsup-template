@@ -19,7 +19,7 @@
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "commit": "git-cz",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
     "release": "bumpp && npm publish",
     "prepare": "simple-git-hooks",
     "prepublishOnly": "npm run build"
@@ -47,7 +47,7 @@
   },
   "lint-staged": {
     "*": [
-      "eslint . --fix"
+      "eslint --fix"
     ]
   },
   "config": {
