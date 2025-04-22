@@ -9,7 +9,7 @@
     "cli"
   ],
   "bin": {
-    "hello-cli": "dist/index.js"
+    "hello": "./index.js"
   },
   "scripts": {
     "start": "dist/index.js",
@@ -20,25 +20,23 @@
     "coverage": "vitest run --coverage",
     "commit": "git-cz",
     "lint": "eslint .",
-    "release": "bumpp && npm publish",
+    "lint:fix": "eslint . --fix",
     "prepare": "simple-git-hooks",
-    "prepublishOnly": "npm run build"
-  },
-  "dependencies": {
-    "ora": "^8.1.1"
+    "release": "node scripts/release.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "devDependencies": {
-    "@hacxy/eslint-config": "^0.0.4",
-    "@types/node": "^20.12.5",
+    "@hacxy/eslint-config": "^0.0.8",
+    "@types/node": "^22.14.1",
     "@vitest/coverage-istanbul": "2.1.8",
-    "bumpp": "^9.9.0",
     "commitizen": "^4.3.1",
+    "conventional-changelog-cli": "^5.0.0",
     "cz-git": "^1.11.0",
     "eslint": "^9.17.0",
     "lint-staged": "^15.2.11",
     "simple-git-hooks": "^2.11.1",
-    "tsup": "^8.3.5",
-    "typescript": "^5.4.4",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
     "vitest": "^2.1.8"
   },
   "simple-git-hooks": {
@@ -47,7 +45,7 @@
   },
   "lint-staged": {
     "*": [
-      "eslint --fix"
+      "npm run lint:fix"
     ]
   },
   "config": {
