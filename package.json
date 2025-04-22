@@ -20,7 +20,7 @@
     "coverage": "vitest run --coverage",
     "commit": "git-cz",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint --fix",
     "prepare": "simple-git-hooks",
     "release": "node scripts/release.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
